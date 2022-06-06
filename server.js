@@ -5,6 +5,7 @@ const { ObjectId } = require('mongodb');
 const app = express();
 const MongoClient = require('mongodb').MongoClient;
 
+//need connectionString
 MongoClient.connect(connectionString)
   .then(client => {
     console.log('connected to database');
