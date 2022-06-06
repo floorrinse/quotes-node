@@ -1,0 +1,42 @@
+@import url('https://fonts.googleapis.com/css2?family=Gentium+Plus&display=swap');
+
+* {
+  font-family: 'Helvetica Neue';
+  box-sizing: border-box;
+}
+
+.quotes {
+  list-style-type: none;
+  padding-left: 0;
+}
+.quote-wrapper {
+  margin-bottom: 7px;
+}
+.quote-buttons {
+  padding-right: 10px;
+}
+.name-text {
+  font-weight: bold;
+}
+.edit-name-input,
+.edit-quote-input {
+ display: block;
+ margin-bottom: 10px;
+ width: 100%;
+}
+.edit-quote-input {
+  resize: none;
+}
+.highlight {
+  background-color: #FFFF99;
+  cursor: text;
+}
+
+@media screen and (min-width: 600px) {
+  .edit-name-input,
+  .edit-quote-input {
+    display: block;
+    margin-bottom: 10px;
+    width: 60%;
+  }
+}
