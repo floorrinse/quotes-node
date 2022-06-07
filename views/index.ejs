@@ -13,8 +13,8 @@
 <body>
   <h1>May the force be with you</h1>
   <form action="/quotes/add" method="POST">
-    <input type="text" placeholder="name" name="name">
-    <input type="text" placeholder="quote" name="quote">
+    <input class="form-control-fl" type="text" placeholder="Name" name="name">
+    <input class="form-control-fl" type="text" placeholder="Quote" name="quote">
     <!-- <button type="submit">Submit</button> -->
     <button type="submit" class="btn btn-outline-primary btn-sm">Submit</button>
   </form>
@@ -48,9 +48,9 @@
         <!-- quote  -->
         <div class="modal-body">
           <label>Name: </label>
-          <input class="edit-name-input" type="text">
+          <input class="edit-name-input form-control" type="text">
           <label>Quote: </label>
-          <textarea class="edit-quote-input" name="" id="" rows="3"></textarea>
+          <textarea class="edit-quote-input form-control" name="" id="" rows="3"></textarea>
         </div>
         <div class="modal-footer">
           <button type="button" class="btn btn-secondary btn-sm" data-bs-dismiss="modal">Cancel</button>
@@ -70,7 +70,8 @@
           </div>
           <!-- quote  -->
           <div class="delete-modal-body p-3">
-            <span class="delete-name-input"></span>: <span class="delete-quote-input"></span>
+            <span class="fw-bold delete-name-input"></span>: 
+            <p class="delete-quote-input"></p>
           </div>
           <div class="modal-footer">
             <button type="button" class="btn btn-secondary btn-sm" data-bs-dismiss="modal">Cancel</button>
