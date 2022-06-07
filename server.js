@@ -1,3 +1,5 @@
+require('dotenv').config();
+
 const express = require('express');
 const bodyParser = require('body-parser');
 const res = require('express/lib/response');
@@ -5,7 +7,9 @@ const { ObjectId } = require('mongodb');
 const app = express();
 const MongoClient = require('mongodb').MongoClient;
 
-//need connectionString
+const quotesConnection = encodeURIComponent(`${process.env.PCKG}`);
+const connectionString = `mongodb+srv://${process.env.WORKER}:${quotesConnection}@cluster0.20cax.mongodb.net/?retryWrites=true&w=majority`
+
 MongoClient.connect(connectionString)
   .then(client => {
     console.log('connected to database');
@@ -17,7 +21,7 @@ MongoClient.connect(connectionString)
     app.use(express.static('public'));
     app.use(bodyParser.urlencoded({ extended: true }));
     app.use(bodyParser.json())
-    app.listen(3000, () => { console.log('listening on port 3000') })
+    app.listen(process.env.PORT, () => { console.log(`listening on port ${process.env.PORT}`) })
 
     //READ - get quotes
     app.get('/', (req, res) => {
