@@ -15,7 +15,8 @@
   <form action="/quotes/add" method="POST">
     <input type="text" placeholder="name" name="name">
     <input type="text" placeholder="quote" name="quote">
-    <button type="submit">Submit</button>
+    <!-- <button type="submit">Submit</button> -->
+    <button type="submit" class="btn btn-outline-primary btn-sm">Submit</button>
   </form>
 
   <h2>Quotes</h2>
@@ -24,8 +25,8 @@
     <% for (let i = 0; i < quotes.length; i++) {%>
       <li class="quote-wrapper" id=<%=quotes[i]._id %>>
         <span class="quote-buttons">
-          <button type="button" class="btn btn-primary btn-sm update-button" data-bs-toggle="modal" data-bs-target="#edit-quote-modal">Edit</button>
-          <button type="button" class="btn btn-primary btn-sm delete-button" data-bs-toggle="modal" data-bs-target="#delete-quote-modal">Delete</button>
+          <button type="button" class="btn btn-outline-primary btn-sm update-button" data-bs-toggle="modal" data-bs-target="#edit-quote-modal">Edit</button>
+          <button type="button" class="btn btn-outline-primary btn-sm delete-button" data-bs-toggle="modal" data-bs-target="#delete-quote-modal">Delete</button>
         </span>
         <span class="quote-num"> <%= [i+1] %>.</span>
         <!--Output name from the iterated quote obj-->
@@ -68,7 +69,7 @@
             <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
           </div>
           <!-- quote  -->
-          <div class="delete-modal-body">
+          <div class="delete-modal-body p-3">
             <span class="delete-name-input"></span>: <span class="delete-quote-input"></span>
           </div>
           <div class="modal-footer">
