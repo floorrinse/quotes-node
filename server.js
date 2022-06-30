@@ -42,7 +42,7 @@ MongoClient.connect(connectionString)
       console.log(req.body);
       quotesCollection.insertOne(req.body)
         .then(result => {
-          res.redirect('/');
+          res.redirect('/quotes');
           // console.log(result);
         })
         .catch(err => console.log(err))
