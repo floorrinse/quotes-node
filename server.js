@@ -28,7 +28,7 @@ MongoClient.connect(connectionString)
     app.listen(PORT, () => { console.log(`listening on port ${PORT}`) })
 
     //READ - get quotes
-    app.get('/', (req, res) => {
+    app.get('/quotes', (req, res) => {
       // res.sendFile(__dirname + '/index.html');
       db.collection('quotes').find().toArray()
         .then(results => {
