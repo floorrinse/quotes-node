@@ -5,7 +5,9 @@ const bodyParser = require('body-parser');
 const res = require('express/lib/response');
 const { ObjectId } = require('mongodb');
 const app = express();
+const cors = require('cors')
 const MongoClient = require('mongodb').MongoClient;
+
 
 const PORT = process.env.PORT || 3000;
 const quotesConnection = encodeURIComponent(`${process.env.PCKG}`);
@@ -18,6 +20,7 @@ MongoClient.connect(connectionString)
     const db = client.db('kardashian-quotes');
     const quotesCollection = db.collection('quotes');
 
+    app.use(cors());
     app.set('view engine', 'ejs');
     app.use(express.static('public'));
     app.use(bodyParser.urlencoded({ extended: true }));
