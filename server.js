@@ -7,6 +7,7 @@ const { ObjectId } = require('mongodb');
 const app = express();
 const MongoClient = require('mongodb').MongoClient;
 
+const PORT = process.env.PORT || 3000;
 const quotesConnection = encodeURIComponent(`${process.env.PCKG}`);
 const connectionString = `mongodb+srv://${process.env.WORKER}:${quotesConnection}@cluster0.20cax.mongodb.net/?retryWrites=true&w=majority`
 
@@ -21,7 +22,7 @@ MongoClient.connect(connectionString)
     app.use(express.static('public'));
     app.use(bodyParser.urlencoded({ extended: true }));
     app.use(bodyParser.json())
-    app.listen(process.env.PORT, () => { console.log(`listening on port ${process.env.PORT}`) })
+    app.listen(PORT, () => { console.log(`listening on port ${PORT}`) })
 
     //READ - get quotes
     app.get('/', (req, res) => {
