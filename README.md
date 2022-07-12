@@ -7,3 +7,8 @@ A website for Star Wars quotes with CRUD abilities.
 - Express
 - MongoDB
 - Heroku
+
+### Usage
+Demo:
+
+![](https://github.com/floorrinse/quotes-node/blob/main/readme-files/QuotesDemo.gif)
